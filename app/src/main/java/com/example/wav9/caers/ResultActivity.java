@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
@@ -16,6 +17,8 @@ public class ResultActivity extends AppCompatActivity {
     private TextView tvResultName;
 
     private TextView tvResultDisc;
+
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,10 @@ public class ResultActivity extends AppCompatActivity {
 
         tvResultDisc = findViewById(R.id.result_disc_textView);
         tvResultDisc.setText(getResultDiscription());
+
+        imageView = (ImageView) findViewById(R.id.result_image);
+        imageView.setImageResource(getResultImage());
+
     }
 
     private int getResultName() {
@@ -104,6 +111,42 @@ public class ResultActivity extends AppCompatActivity {
             return R.string.ENTP_disc;
         else if (result.equals("INTP"))
             return R.string.INTP_disc;
+        else return 0;
+    }
+
+    private int getResultImage() {
+        if (result.equals("ESFP"))
+            return R.drawable.esfp;
+        else if (result.equals("ISFP"))
+            return R.drawable.isfp;
+        else if (result.equals("ESTP"))
+            return R.drawable.estp;
+        else if (result.equals("ISTP"))
+            return R.drawable.istp;
+        else if (result.equals("ESFJ"))
+            return R.drawable.esfj;
+        else if (result.equals("ISFJ"))
+            return R.drawable.isfj;
+        else if (result.equals("ESTJ"))
+            return R.string.ESTJ_name;
+        else if (result.equals("ISTJ"))
+            return R.drawable.istj;
+        else if (result.equals("ENFJ"))
+            return R.drawable.enfj;
+        else if (result.equals("INFJ"))
+            return R.drawable.infj;
+        else if (result.equals("ENFP"))
+            return R.drawable.enfp;
+        else if (result.equals("INFP"))
+            return R.drawable.infp;
+        else if (result.equals("ENTJ"))
+            return R.drawable.entj;
+        else if (result.equals("INTJ"))
+            return R.drawable.intj;
+        else if (result.equals("ENTP"))
+            return R.drawable.entp;
+        else if (result.equals("INTP"))
+            return R.drawable.intp;
         else return 0;
     }
 

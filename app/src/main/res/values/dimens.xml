@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--Paddings-->
     <dimen name="title_rl_padding">30dp</dimen>
     <dimen name="title_tb_padding">10dp</dimen>
 
-    <dimen name="card_radius">20dp</dimen>
     <dimen name="card_padding">20dp</dimen>
-
-    <dimen name="num_question_text_size">18dp</dimen>
     <dimen name="num_question_padding">8dp</dimen>
+
+
+    <!--Radius-->
+    <dimen name="card_radius">20dp</dimen>
+
+
+    <!--Text size-->
+    <dimen name="num_question_text_size">18dp</dimen>
+    <dimen name="result_name_text_size">28dp</dimen>
+    <dimen name="result_disc_text_size">18dp</dimen>
 </resources>

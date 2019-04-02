@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_rl_padding">30dp</dimen>
+    <dimen name="title_tb_padding">10dp</dimen>
+
+    <dimen name="card_radius">20dp</dimen>
+    <dimen name="card_padding">20dp</dimen>
+
+    <dimen name="num_question_text_size">18dp</dimen>
+    <dimen name="num_question_padding">8dp</dimen>
+</resources>

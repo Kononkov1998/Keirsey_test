@@ -8,13 +8,12 @@
     <dimen name="card_padding">20dp</dimen>
     <dimen name="num_question_padding">8dp</dimen>
 
-
     <!--Radius-->
     <dimen name="card_radius">20dp</dimen>
-
 
     <!--Text size-->
     <dimen name="num_question_text_size">18dp</dimen>
     <dimen name="result_name_text_size">28dp</dimen>
     <dimen name="result_disc_text_size">18dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

@@ -38,7 +38,6 @@ public class ResultActivity extends AppCompatActivity {
 
         imageView = (ImageView) findViewById(R.id.result_image);
         imageView.setImageResource(getResultImage());
-
     }
 
     private int getResultName() {
@@ -128,7 +127,7 @@ public class ResultActivity extends AppCompatActivity {
         else if (result.equals("ISFJ"))
             return R.drawable.isfj;
         else if (result.equals("ESTJ"))
-            return R.string.ESTJ_name;
+            return R.drawable.estj;
         else if (result.equals("ISTJ"))
             return R.drawable.istj;
         else if (result.equals("ENFJ"))
@@ -147,7 +146,7 @@ public class ResultActivity extends AppCompatActivity {
             return R.drawable.entp;
         else if (result.equals("INTP"))
             return R.drawable.intp;
-        else return 0;
+        else return R.drawable.entj;
     }
 
     private String calculateResult(){
@@ -174,5 +173,6 @@ public class ResultActivity extends AppCompatActivity {
     public void mainPage(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }

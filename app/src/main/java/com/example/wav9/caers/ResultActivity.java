@@ -14,6 +14,8 @@ public class ResultActivity extends AppCompatActivity {
 
     private String result;
 
+    private String brightness;
+
     private TextView tvResultName;
 
     private TextView tvResultDisc;
@@ -28,6 +30,7 @@ public class ResultActivity extends AppCompatActivity {
 
         counter = getIntent().getParcelableExtra("counter");
         result = calculateResult();
+        brightness = calculateBrightness(); /* Строка с выводом о яркости челоаека. */
 
         tvResultName = findViewById(R.id.result_name_textView);
         String resultNameString = getResources().getString(R.string.your_type) + getResources().getString(getResultName());
@@ -168,6 +171,16 @@ public class ResultActivity extends AppCompatActivity {
         else
             letter4 = "P";
         return letter1 + letter2 + letter3 + letter4;
+    }
+
+    private String calculateBrightness()
+    {
+        int EI = (Math.max(counter.getCountE(), counter.getCountI()) - 5) * 2;
+        int SN = Math.max(counter.getCountS(), counter.getCountN()) - 10;
+        int TF = Math.max(counter.getCountT(), counter.getCountF()) - 10;
+        int JP = Math.max(counter.getCountJ(), counter.getCountP()) - 10;
+        int Z = EI + SN + TF + JP;
+        return (Z >= 0 && Z <= 19) ? getResources().getString(R.string.soft_person) : getResources().getString(R.string.bright_person);
     }
 
     public void mainPage(View view) {

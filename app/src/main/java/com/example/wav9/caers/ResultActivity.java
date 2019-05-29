@@ -14,8 +14,6 @@ public class ResultActivity extends AppCompatActivity {
 
     private String result;
 
-    private String brightness;
-
     private TextView tvResultName;
 
     private TextView tvResultDisc;
@@ -30,7 +28,6 @@ public class ResultActivity extends AppCompatActivity {
 
         counter = getIntent().getParcelableExtra("counter");
         result = calculateResult();
-        brightness = calculateBrightness(); /* Строка с выводом о яркости челоаека. */
 
         tvResultName = findViewById(R.id.result_name_textView);
         String resultNameString = getResources().getString(R.string.your_type) + getResources().getString(getResultName());
@@ -38,6 +35,7 @@ public class ResultActivity extends AppCompatActivity {
 
         tvResultDisc = findViewById(R.id.result_disc_textView);
         tvResultDisc.setText(getResultDiscription());
+
 
         imageView = (ImageView) findViewById(R.id.result_image);
         imageView.setImageResource(getResultImage());
@@ -79,41 +77,43 @@ public class ResultActivity extends AppCompatActivity {
         else return 0;
     }
 
-    private int getResultDiscription() {
+    private String getResultDiscription() {
+
+        String brightness = this.calculateBrightness();
 
         if (result.equals("ESFP"))
-            return R.string.ESFP_disc;
+            return brightness + getResources().getString(R.string.ESFP_disc);
         else if (result.equals("ISFP"))
-            return R.string.ISFP_disc;
+            return brightness + getResources().getString(R.string.ISFP_disc);
         else if (result.equals("ESTP"))
-            return R.string.ESTP_disc;
+            return brightness + getResources().getString(R.string.ESTP_disc);
         else if (result.equals("ISTP"))
-            return R.string.ISTP_disc;
+            return brightness + getResources().getString(R.string.ISTP_disc);
         else if (result.equals("ESFJ"))
-            return R.string.ESFJ_disc;
+            return brightness + getResources().getString(R.string.ESFJ_disc);
         else if (result.equals("ISFJ"))
-            return R.string.ISFJ_disc;
+            return brightness + getResources().getString(R.string.ISFJ_disc);
         else if (result.equals("ESTJ"))
-            return R.string.ESTJ_disc;
+            return brightness + getResources().getString(R.string.ESTJ_disc);
         else if (result.equals("ISTJ"))
-            return R.string.ISTJ_disc;
+            return brightness + getResources().getString(R.string.ISTJ_disc);
         else if (result.equals("ENFJ"))
-            return R.string.ENFJ_disc;
+            return brightness + getResources().getString(R.string.ENFJ_disc);
         else if (result.equals("INFJ"))
-            return R.string.INFJ_disc;
+            return brightness + getResources().getString(R.string.INFJ_disc);
         else if (result.equals("ENFP"))
-            return R.string.ENFP_disc;
+            return brightness + getResources().getString(R.string.ENFP_disc);
         else if (result.equals("INFP"))
-            return R.string.INFP_disc;
+            return brightness + getResources().getString(R.string.INFP_disc);
         else if (result.equals("ENTJ"))
-            return R.string.ENTJ_disc;
+            return brightness + getResources().getString(R.string.ENTJ_disc);
         else if (result.equals("INTJ"))
-            return R.string.INTJ_disc;
+            return brightness + getResources().getString(R.string.INTJ_disc);
         else if (result.equals("ENTP"))
-            return R.string.ENTP_disc;
+            return brightness + getResources().getString(R.string.ENTP_disc);
         else if (result.equals("INTP"))
-            return R.string.INTP_disc;
-        else return 0;
+            return brightness + getResources().getString(R.string.INTP_disc);
+        else return "";
     }
 
     private int getResultImage() {
